@@ -52,7 +52,7 @@ int main()
           double angle = std::stod(j[1]["steering_angle"].get<std::string>());
           pid.UpdateError(cte);
           double steer_value = pid.TotalError();
-          double throttle = 1.0 - (steer_value*steer_value);
+          double throttle = 0.75 - (steer_value*steer_value);
           
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
